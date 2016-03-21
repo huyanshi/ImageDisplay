@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		904374D91C98E952007955E7 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 904374D81C98E952007955E7 /* image.png */; };
 		904374DB1C98EB50007955E7 /* IMG_1754.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 904374DA1C98EB50007955E7 /* IMG_1754.JPG */; };
 		904E1DF11C983817002F2C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E1DF01C983817002F2C8D /* AppDelegate.swift */; };
 		904E1DF31C983817002F2C8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E1DF21C983817002F2C8D /* ViewController.swift */; };
@@ -31,6 +30,13 @@
 		904E1E3A1C983CF3002F2C8D /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E1E2D1C983CF3002F2C8D /* View+SnapKit.swift */; };
 		904E1E3B1C983CF3002F2C8D /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E1E2E1C983CF3002F2C8D /* ViewController+SnapKit.swift */; };
 		904E1E3D1C983E05002F2C8D /* UIImageFixOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E1E3C1C983E05002F2C8D /* UIImageFixOrientation.swift */; };
+		90918F951C9F85850066AB0E /* test1.png in Resources */ = {isa = PBXBuildFile; fileRef = 90918F901C9F85850066AB0E /* test1.png */; };
+		90918F961C9F85850066AB0E /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90918F911C9F85850066AB0E /* test2.png */; };
+		90918F971C9F85850066AB0E /* test3.png in Resources */ = {isa = PBXBuildFile; fileRef = 90918F921C9F85850066AB0E /* test3.png */; };
+		90918F981C9F85850066AB0E /* test4.png in Resources */ = {isa = PBXBuildFile; fileRef = 90918F931C9F85850066AB0E /* test4.png */; };
+		90918F991C9F85850066AB0E /* test5.png in Resources */ = {isa = PBXBuildFile; fileRef = 90918F941C9F85850066AB0E /* test5.png */; };
+		90918F9B1C9F8E140066AB0E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90918F9A1C9F8E140066AB0E /* PhotoViewController.swift */; };
+		90918F9D1C9F95430066AB0E /* ScrollDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90918F9C1C9F95430066AB0E /* ScrollDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		904374D81C98E952007955E7 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image.png; path = Source/image.png; sourceTree = "<group>"; };
 		904374DA1C98EB50007955E7 /* IMG_1754.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1754.JPG; sourceTree = "<group>"; };
 		904E1DED1C983817002F2C8D /* ImageDisplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageDisplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		904E1DF01C983817002F2C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +87,13 @@
 		904E1E2D1C983CF3002F2C8D /* View+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+SnapKit.swift"; sourceTree = "<group>"; };
 		904E1E2E1C983CF3002F2C8D /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SnapKit.swift"; sourceTree = "<group>"; };
 		904E1E3C1C983E05002F2C8D /* UIImageFixOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFixOrientation.swift; sourceTree = "<group>"; };
+		90918F901C9F85850066AB0E /* test1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test1.png; sourceTree = "<group>"; };
+		90918F911C9F85850066AB0E /* test2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test2.png; sourceTree = "<group>"; };
+		90918F921C9F85850066AB0E /* test3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test3.png; sourceTree = "<group>"; };
+		90918F931C9F85850066AB0E /* test4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test4.png; sourceTree = "<group>"; };
+		90918F941C9F85850066AB0E /* test5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test5.png; sourceTree = "<group>"; };
+		90918F9A1C9F8E140066AB0E /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		90918F9C1C9F95430066AB0E /* ScrollDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +144,11 @@
 		904E1DEF1C983817002F2C8D /* ImageDisplay */ = {
 			isa = PBXGroup;
 			children = (
-				904374D81C98E952007955E7 /* image.png */,
+				90918F901C9F85850066AB0E /* test1.png */,
+				90918F911C9F85850066AB0E /* test2.png */,
+				90918F921C9F85850066AB0E /* test3.png */,
+				90918F931C9F85850066AB0E /* test4.png */,
+				90918F941C9F85850066AB0E /* test5.png */,
 				904E1E201C983CF3002F2C8D /* Source */,
 				904E1DF01C983817002F2C8D /* AppDelegate.swift */,
 				904374DA1C98EB50007955E7 /* IMG_1754.JPG */,
@@ -143,6 +159,8 @@
 				904E1DF71C983817002F2C8D /* Assets.xcassets */,
 				904E1DF91C983817002F2C8D /* LaunchScreen.storyboard */,
 				904E1DFC1C983817002F2C8D /* Info.plist */,
+				90918F9C1C9F95430066AB0E /* ScrollDisplayViewController.swift */,
+				90918F9A1C9F8E140066AB0E /* PhotoViewController.swift */,
 			);
 			path = ImageDisplay;
 			sourceTree = "<group>";
@@ -291,12 +309,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90918F991C9F85850066AB0E /* test5.png in Resources */,
 				904374DB1C98EB50007955E7 /* IMG_1754.JPG in Resources */,
 				904E1E371C983CF3002F2C8D /* Info.plist in Resources */,
+				90918F981C9F85850066AB0E /* test4.png in Resources */,
 				904E1DFB1C983817002F2C8D /* LaunchScreen.storyboard in Resources */,
 				904E1DF81C983817002F2C8D /* Assets.xcassets in Resources */,
 				904E1DF61C983817002F2C8D /* Main.storyboard in Resources */,
-				904374D91C98E952007955E7 /* image.png in Resources */,
+				90918F951C9F85850066AB0E /* test1.png in Resources */,
+				90918F961C9F85850066AB0E /* test2.png in Resources */,
+				90918F971C9F85850066AB0E /* test3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +353,8 @@
 				904E1E1F1C98390C002F2C8D /* ImageDisplayViewController.swift in Sources */,
 				904E1DF31C983817002F2C8D /* ViewController.swift in Sources */,
 				904E1E301C983CF3002F2C8D /* ConstraintAttributes.swift in Sources */,
+				90918F9D1C9F95430066AB0E /* ScrollDisplayViewController.swift in Sources */,
+				90918F9B1C9F8E140066AB0E /* PhotoViewController.swift in Sources */,
 				904E1E3D1C983E05002F2C8D /* UIImageFixOrientation.swift in Sources */,
 				904E1E381C983CF3002F2C8D /* LayoutConstraint.swift in Sources */,
 				904E1E331C983CF3002F2C8D /* ConstraintMaker.swift in Sources */,

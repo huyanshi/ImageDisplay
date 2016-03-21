@@ -9,11 +9,12 @@
 import UIKit
 
 class ImageDisplayViewController: UIViewController,UIScrollViewDelegate {
-
-    private var clippingWidth:CGFloat = 320
+    let SCREENW = UIScreen.mainScreen().bounds.size.width
+    //MARK : - 属性列表
+    private var imageView:UIImageView?
+    private var clippingWidth:CGFloat = UIScreen.mainScreen().bounds.size.width
     private var clippingHeight:CGFloat = 160
     private var currentScaleIsHeight:Bool = true
-    private var imageView:UIImageView?
     var image:UIImage? {
         didSet {
             dispatch_async(dispatch_get_global_queue(0, 0)) { () -> Void in
@@ -27,10 +28,10 @@ class ImageDisplayViewController: UIViewController,UIScrollViewDelegate {
             }
         }
     }
-
+    //MARK : - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Do any additional setup after loading the view.
     }
     override func loadView() {
         super.loadView()
@@ -44,7 +45,7 @@ class ImageDisplayViewController: UIViewController,UIScrollViewDelegate {
         scrollView.snp_makeConstraints { (make) -> Void in
             make.edges.equalTo(0)
         }
-        clippingWidth = 320
+        clippingWidth = SCREENW
         imageView = UIImageView(frame: CGRectZero)
         imageView?.userInteractionEnabled = true
         scrollView.addSubview(imageView!)
@@ -61,7 +62,59 @@ class ImageDisplayViewController: UIViewController,UIScrollViewDelegate {
             widthScale()
         }
         squareStyle()
-        scrollView.contentOffset = CGPoint(x: ((imageView?.frame.size.width)! - clippingWidth)/2, y: ((imageView?.frame.size.height)! - scrollView.frame.height)/2)
+        scrollView.contentOffset = CGPoint(x: ((imageView?.frame.size.width)! - clippingWidth)/2, y: ((imageView?.frame.size.height)! - scrollView.frame.height)/2)    }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.hidden = false
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    //MARK : -
+    private lazy var scrollView:UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = UIColor.blackColor()
+        scrollView.delegate = self
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.bounces = false
+        scrollView.maximumZoomScale = 2
+        scrollView.bouncesZoom = false
+        return scrollView
+    }()
+    //MARK : -
+    private func heightScale() {
+        let scale = clippingHeight / (image?.size.height)!
+        if scale > 1 {
+            scrollView.maximumZoomScale = scale + scale
+        }
+        scrollView.minimumZoomScale = scale
+        scrollView.zoomScale = scale
+        currentScaleIsHeight = true
+        
+    }
+    private func widthScale() {
+        let scale = scrollView.frame.size.width / (image?.size.width)!
+        if scale > 1 {
+            scrollView.maximumZoomScale = scale + scale
+        }
+        scrollView.minimumZoomScale = scale
+        scrollView.zoomScale = scale
+        currentScaleIsHeight = false
+    }
+    private func rectangleStyle() {
+        clippingHeight = 160
+        if currentScaleIsHeight {
+            let scale = scrollView.frame.size.width / (image?.size.width)!
+            if scale > 1 {
+                scrollView.maximumZoomScale = scale + scale
+            }
+            scrollView.minimumZoomScale = scale
+            currentScaleIsHeight = false
+        }
+        maskViewClippingRect()
     }
     private func squareStyle() {
         clippingHeight = 320
@@ -76,48 +129,21 @@ class ImageDisplayViewController: UIViewController,UIScrollViewDelegate {
         if imageView?.frame.size.height < clippingHeight {
             heightScale()
         }
-       
+        maskViewClippingRect()
     }
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.hidden = false
-    }
-    private func widthScale() {
-        let scale = scrollView.frame.size.width / (image?.size.width)!
-        if scale > 1 {
-            scrollView.maximumZoomScale = scale + scale
+    private func maskViewClippingRect() {
+        if imageView?.frame.size.width < clippingWidth {
+            widthScale()
         }
-        scrollView.minimumZoomScale = scale
-        scrollView.zoomScale = scale
-        currentScaleIsHeight = false
-    }
-
-    private func heightScale() {
-        let scale = clippingHeight / (image?.size.height)!
-        if scale > 1 {
-            scrollView.maximumZoomScale = scale + scale
-        }
-        scrollView.minimumZoomScale = scale
-        scrollView.zoomScale = scale
-        currentScaleIsHeight = true
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let h = scrollView.frame.size.height
+        let borderRect = CGRect(x: 0, y: (h - clippingHeight)/2, width: clippingWidth, height: clippingHeight)
+        let y3 = borderRect.origin.y + clippingHeight
+        let imageInset = UIEdgeInsets(top: borderRect.origin.y, left: 0, bottom: h - y3, right: 0)
+        scrollView.contentInset = imageInset
+        
     }
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return imageView
     }
-    private lazy var scrollView:UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.backgroundColor = UIColor.blackColor()
-        scrollView.delegate = self
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.bounces = false
-        scrollView.maximumZoomScale = 2
-        scrollView.bouncesZoom = false
-        return scrollView
-    }()
-
+    
 }

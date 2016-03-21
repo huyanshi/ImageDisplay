@@ -29,13 +29,34 @@
                                     <action selector="clickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TE3-Vc-GEd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOD-7D-1rx">
+                                <rect key="frame" x="252" y="350.5" width="96" height="41"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="数组图片">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SdA-fW-uKr"/>
+                                    <action selector="clickPhotoArr:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xM8-EN-b2A"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="b7b-RX-nif" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9qR-zC-bEI"/>
+                            <constraint firstItem="UOD-7D-1rx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R6B-jo-8nr"/>
+                            <constraint firstItem="UOD-7D-1rx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wab-7J-qaG"/>
                             <constraint firstItem="b7b-RX-nif" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kyR-ll-whb"/>
+                            <constraint firstItem="UOD-7D-1rx" firstAttribute="top" secondItem="b7b-RX-nif" secondAttribute="bottom" constant="30" id="nXS-3E-Bhf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Wab-7J-qaG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="aPo-ft-J7f"/>
                 </viewController>
